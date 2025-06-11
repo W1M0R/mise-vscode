@@ -408,6 +408,25 @@ export const SUPPORTED_EXTENSIONS: Array<ConfigurableExtension> = [
 			});
 		},
 	},
+	{
+		extensionId: "a-h.templ",
+		toolNames: ["templ", "go:github.com/a-h/templ/cmd/templ"],
+		generateConfiguration: async ({
+			miseService,
+			tool,
+			miseConfig,
+			useShims,
+			useSymLinks,
+		}) => {
+			return configureSimpleExtension(miseService, {
+				configKey: "templ.executablePath",
+				useShims,
+				useSymLinks,
+				tool,
+				miseConfig,
+			});
+		},
+	},
 ];
 
 export const CONFIGURABLE_EXTENSIONS_BY_TOOL_NAME = new Map<
